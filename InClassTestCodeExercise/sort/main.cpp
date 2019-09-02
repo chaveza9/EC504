@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
   //Begin output file : DO NOT CHANGE
   ofstream outfile(strcat(argv[1],"_out"));
-  outfile << difference_in_seconds << endl;
+  cout << difference_in_seconds << endl;
 
   //Time slow Sort
   start = chrono::steady_clock::now();
@@ -69,13 +69,13 @@ int main(int argc, char *argv[])
   stop = chrono::steady_clock::now();
   difference_in_time = stop - start;
   difference_in_seconds = double(difference_in_time.count());
-  outfile << difference_in_seconds << endl;
+  cout << difference_in_seconds << endl;
 
   
   //End output file
-  cout << size << endl;
+  outfile << size << endl;
   for(int i=0; i<size ; i++)
-    cout << A[i] << endl;
+    outfile << A[i] << endl;
 
   
   return 0;
