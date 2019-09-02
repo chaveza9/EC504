@@ -4,12 +4,12 @@
 TARGET	=  sort
 
 C_SOURCES =  main.cpp 
-C_OBJS     =  main.o 
-# MY_INCLUDES =  sorting.h 
+C_OBJS     =  main.o
+MY_INCLUDES =  sorting.h 
 
 
 CCX = g++
-CXXFLAGS = -g -Wall
+CXXFLAGS = -std=c++11 -g -Wall
 
 #============================================================
 all: $(TARGET)

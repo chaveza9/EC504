@@ -2,8 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <cstring>
 using namespace std;
 #include "sorting.h"
+
 
 /***********************************************************
 Main progam template for sorting timing
