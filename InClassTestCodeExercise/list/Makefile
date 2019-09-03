@@ -3,10 +3,10 @@
 #============================================================
 TARGET	=  list
 
-C_SOURCES =  makeList_v2.cpp
-C_OBJS     =makeList_v2.o
+C_SOURCES =  makeSingleList.cpp
+C_OBJS     = makeSingleList.o
 MY_INCLUDES =
-# merg.h
+
 
 
 CCX = g++
@@ -31,7 +31,7 @@ NOTES =
 %= otherstuff.np 
 
 clean:
-	rm -f $(TARGET) $(C_OBJS) core 
+	rm -f $(TARGET) $(C_OBJS) core *~
 
 tar: $(ALL_SOURCES) $(NOTES)
 	tar cvf $(TARGET).tar $(ALL_SOURCES)  $(NOTES)

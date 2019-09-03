@@ -1,7 +1,3 @@
-// Copyright 2018 Michael Graziano mjgrazia@bu.edu
-// Copyright 2018 Richard Brower brower@bu.edu
-
-
 #include<iostream>
 #include<iomanip>
 #include <cstdlib> 
@@ -9,8 +5,7 @@
 #include <math.h>
 using namespace std;
 
-#define Asize  101
-#define Bsize  600
+#define Asize  100000
 
 void swap(int* a, int* b);
 void insertionsort(int a[], int N);
@@ -21,58 +16,20 @@ int main()
   
   int a[Asize];
   int a_tmp[Asize];
-  int b[Bsize];
-   int b_tmp[Bsize];
 
   int i;
 
 for(i = 0;i<Asize;i++)
   a[i] = (rand() +1)%1000000  ;    
-  
+
  mergeSort(a,  a_tmp, 0, Asize-1);
- // insertionsort(a, Asize);
 
  cout << Asize << "\n";
  for(i = 0;i<Asize;i++)
      cout << a[i] << "\n";
-
-for(i = 0;i<Bsize;i++)
-  b[i] = (rand() +1)%1000000;    
-
- mergeSort(b,  b_tmp, 0, Bsize-1);
- //insertionsort(b, Bsize);
-
- cout << Bsize << "\n";
- for(i= 0;i < Bsize;i++)
-     cout << b[i] << "\n";
-
- /* =============== 
-
-Find Median
-
-*/
-
- int Csize= Asize + Bsize; 
- int c[Csize];
- int c_tmp[Csize];
- for(i = 0; i < Asize; i++)
-      c[i] = a[i];
  
-   for(i = Asize; i < Csize; i++)
-     c[i] = b[i-Asize];
+ // insertionsort(a, Asize);
 
-
-  mergeSort(c,  c_tmp, 0, Csize-1);
-     //  insertionsort(c, Csize);
-
-  
-  cout << Csize << "\n";
-  for(i= 0;i < Csize;i++)
-     cout << c[i] << "\n";
- 
-  cout << "Medan of A plus B  is  " << c[Csize/2] << "\n";
-  
- 
   return 0;
 }
 
