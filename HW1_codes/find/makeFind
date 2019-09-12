@@ -8,7 +8,7 @@ C_OBJS     = find.o
 MY_INCLUDES =
 
 CCX = g++
-CXXFLAGS = -g -std=c++14  -Wall
+CXXFLAGS = -g -std=c++11  -Wall
 
 #============================================================
 all: $(TARGET)
