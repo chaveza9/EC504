@@ -19,15 +19,16 @@ int main()
 
   int i;
 
+  //  cout << RAND_MAX << endl;
 for(i = 0;i<Asize;i++)
-  a[i] = (rand() +1)%1000000  ;    
+  a[i] = (rand() +1)% RAND_MAX ;    
 
  mergeSort(a,  a_tmp, 0, Asize-1);
 
  cout << Asize << "\n";
  for(i = 0;i<Asize;i++)
      cout << a[i] << "\n";
- 
+
  // insertionsort(a, Asize);
 
   return 0;

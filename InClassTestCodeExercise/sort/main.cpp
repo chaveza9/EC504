@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
   /* Keep Copy of List */
   int *a_tmp = new int[size];
 
-#if 1
+#if 0
    for(int i=0; i<size ; i++)
      a_tmp[i] = A[i];
   
@@ -49,26 +49,21 @@ int main(int argc, char *argv[])
   stop = chrono::steady_clock::now();
   difference_in_time = stop - start;
   difference_in_seconds = double(difference_in_time.count());
-
-  //Time slow Sort
-  start = chrono::steady_clock::now();
-  insertionsort(A,size); 
-  stop = chrono::steady_clock::now();
-  difference_in_time = stop - start;
-  difference_in_seconds = double(difference_in_time.count());
   cout << difference_in_seconds << endl;
-
+  cout << "Finish insertion sort " << endl;
+  
     for(int i=0; i<size ; i++)
      A[i] = a_tmp[i];
 #endif 
 
-    
   start = chrono::steady_clock::now();
    mergeSort(A,  a_tmp, 0, size-1);
   stop = chrono::steady_clock::now();
   difference_in_time = stop - start;
   difference_in_seconds = double(difference_in_time.count());
   cout << difference_in_seconds << endl;
+
+   cout << "Finish merge sort " << endl;
 
 #if 1
   //Begin output file : DO NOT CHANGE
