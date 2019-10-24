@@ -75,14 +75,18 @@ int main(int argc, char *argv[])
    P = Find( InputList[13%n+1], T );
    if(P != NULL)  cout << " Found    " <<  Retrieve( P )  << endl;
    
+   cout <<"Height of tree before deletion is:"<<getHeight(T)<<endl;
+   
    T = Delete(  InputList[13%n + 1], T );
+
    
    P = Find( InputList[13%n +1 ], T );
    
    if(P == NULL)  cout << "After Delete " << InputList[13%n + 1] << " not found "  << endl;
    
+
    cout <<"Min is  " << Retrieve( FindMin( T ) ) << "    Max is  " << Retrieve( FindMax( T ) ) << endl;
-				  
+   cout <<"Height of tree after deletion is:"<< getHeight (T) <<endl;
     
 
     return 0;

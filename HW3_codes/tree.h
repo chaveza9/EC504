@@ -1,4 +1,5 @@
         typedef int ElementType;
+        typedef int HeightType;
 
 /* START: fig4_16.txt */
         #ifndef _Tree_H
@@ -15,6 +16,8 @@
         SearchTree Insert( ElementType X, SearchTree T );
         SearchTree Delete( ElementType X, SearchTree T );
         ElementType Retrieve( Position P );
+        HeightType maxDepth( SearchTree T );
+        HeightType getHeight (SearchTree T);
 
         #endif  /* _Tree_H */
 
