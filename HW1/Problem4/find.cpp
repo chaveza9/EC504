@@ -137,7 +137,8 @@ int findDictionary(int key, int *a, int N)
   // Initialize indexes
   int left = 0, right = N-1; 
   // Define pivot variables
-  int m, x;
+  int m; 
+  double x;
   // look within array iteratively
   while (left <= right && key>=a[left] && key<=a[right])
   {
@@ -148,7 +149,7 @@ int findDictionary(int key, int *a, int N)
     // Compare array against key
     if (a[m]==key){           // Value has been found at index m
       index = m;
-      break;
+      return m;
     }
     else if(a[m]<key)        // Value is on the right array
       left = m+1;
