@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
    T = MakeEmpty( NULL );
    for( i = 1; i < n + 1; i++ )
      T = Insert( InputList[i], T );
-   
+   cout << " Height before deletion is:" <<maxDepth(T)<<endl;
    cout << "Find  " <<  InputList[13%n+1] << endl;
    P = Find( InputList[13%n+1], T );
    if(P != NULL)  cout << " Found    " <<  Retrieve( P )  << endl;
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
    if(P == NULL)  cout << "After Delete " << InputList[13%n + 1] << " not found "  << endl;
    
    cout <<"Min is  " << Retrieve( FindMin( T ) ) << "    Max is  " << Retrieve( FindMax( T ) ) << endl;
-   cout << " Height is:" <<maxDepth(T)<<endl;
+   cout << " Height after deletion is:" <<maxDepth(T)<<endl;
 				  
     
 
