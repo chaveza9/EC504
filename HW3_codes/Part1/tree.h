@@ -16,7 +16,6 @@
         SearchTree Insert( ElementType X, SearchTree T );
         SearchTree Delete( ElementType X, SearchTree T );
         ElementType Retrieve( Position P );
-        HeightType maxDepth( SearchTree T );
         HeightType getHeight (SearchTree T);
 
         #endif  /* _Tree_H */

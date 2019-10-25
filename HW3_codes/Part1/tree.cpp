@@ -4,7 +4,6 @@
 
 struct TreeNode
 {
-  HeightType Height;
   ElementType Element;
   SearchTree  Left;
   SearchTree  Right;
@@ -78,9 +77,7 @@ SearchTree Insert( ElementType X, SearchTree T )
 	T->Right = Insert( X, T->Right );
   /* Else X is in the tree already; we'll do nothing */
 
-  // Update Height of tree
-  T->Height = maxDepth(T);
-  
+ 
   return T; 
 }
 
@@ -113,9 +110,7 @@ SearchTree Delete( ElementType X, SearchTree T )
 	      T = T->Left;
 	    free( TmpCell );
 	  }
-  // Update Height of tree
-  T->Height = maxDepth(T);
-  
+    
   return T;
 }
 
@@ -124,14 +119,14 @@ ElementType Retrieve( Position P )
   return P->Element;
 }
 
-HeightType maxDepth( SearchTree T )
+HeightType getHeight (SearchTree T)
 {
   if (T==NULL)
     return -1;
 
   // Compute height of each subtree
-  HeightType left_height = maxDepth(T->Left);
-  HeightType right_height = maxDepth(T->Right);
+  HeightType left_height = getHeight(T->Left);
+  HeightType right_height = getHeight(T->Right);
 
   // Compute Maximum value between heights
   int height = ((left_height>right_height)? 
@@ -141,9 +136,6 @@ HeightType maxDepth( SearchTree T )
   return 1+height;
 }
 
-HeightType getHeight (SearchTree T){
-  return T->Height;
-}
   
 
 

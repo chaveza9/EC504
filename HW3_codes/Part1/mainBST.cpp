@@ -16,6 +16,7 @@ static int OpCount = 0;
 
 int localSize = 10;
 int numPermutations = 10;
+int deletionNum = 100;
 
 int  uniform(int  m);
 void initialize_and_permute(int permutation[], int n);
@@ -35,7 +36,7 @@ int main(int argc, char *argv[])
   ofstream outfile;
   
   // Define Random List Sizes
-  int N[] = {8,18,32,512};
+  int N[] = {8,18,32,512,1024};
   int treeHeight[numPermutations];
   /* Local data */
   int n;
@@ -81,10 +82,13 @@ int main(int argc, char *argv[])
 
     int* NodeArray = NULL;
     int sizeArray;
+    int delIndx [deletionNum]; 
+   
+
     // Create Empty Tree
     SearchTree T;
     Position P;
-   for( int j =0; j< 4; j++)
+   for( int j =0; j< 5; j++)
    {
         sizeArray = N[j];
        
@@ -96,12 +100,12 @@ int main(int argc, char *argv[])
         for( i = 1; i < N[j]; i++ )
             NodeArray[i] = InputList[i];
         
-
+        if(j<4){
         for (k = 0; k < numPermutations; k++)
         {
             // Empty Previous Tree
             T = MakeEmpty( NULL );
-            for( i = 1; i < sizeArray ; i++ )
+            for( i = 0; i < sizeArray ; i++ )
                 T = Insert( NodeArray[i], T );
             // Store tree Height
             treeHeight [k]= getHeight (T);
@@ -109,27 +113,38 @@ int main(int argc, char *argv[])
             // Permute array
             initialize_and_permute(NodeArray , sizeArray); 
 
-            /*cout << "Find  " <<  InputList[13%n+1] << endl;
-            P = Find( InputList[13%n+1], T );
-            if(P != NULL)  cout << " Found    " <<  Retrieve( P )  << endl;
-            
-            cout <<"Height of tree before deletion is:"<<getHeight(T)<<endl;
-            
-            T = Delete(  InputList[13%n + 1], T );
-
-            
-            P = Find( InputList[13%n +1 ], T );
-            
-            if(P == NULL)  cout << "After Delete " << InputList[13%n + 1] << " not found "  << endl;
-            
-
-            cout <<"Min is  " << Retrieve( FindMin( T ) ) << "    Max is  " << Retrieve( FindMax( T ) ) << endl;
-            cout <<"Height of tree after deletion is:"<< getHeight (T) <<endl;*/
-
         }
         // Compute Average and print
         
         myfile << sizeArray<< "\t" << average(treeHeight,numPermutations) <<endl;
+        }
+        else{
+            cout << "Analysis Part 2"<<endl;
+            // Empty Previous Tree
+            T = MakeEmpty( NULL );
+            cout << "empty"<<endl;
+            for( i = 0; i < sizeArray ; i++ )
+                T = Insert( NodeArray[i], T );
+            cout << "created"<<endl;
+            cout<<" Height Before Deletion:"<< getHeight(T)<<endl;
+            // Delete Elements from Array
+            for (i = 0; i < deletionNum; i++)
+            {
+                delIndx[i] = NodeArray[rand()%1024]; 
+                cout<<"val to be deleted: "<<delIndx[i]<<endl;
+                T = Delete(delIndx[i], T );    
+            }
+
+            cout<<" Size After Deletion:" <<getHeight(T)<<endl;
+            // Insert Values into tree again
+            for (i = 0; i < deletionNum; i++)
+            {
+                T = Insert(  delIndx[i], T );    
+            }
+            cout<<" Size After Insertion:" <<getHeight(T)<<endl;
+              
+        }
+
         // delete Array
         delete[] NodeArray;
    } 
