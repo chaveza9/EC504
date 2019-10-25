@@ -82,6 +82,7 @@ int main(int argc, char *argv[])
    if(P == NULL)  cout << "After Delete " << InputList[13%n + 1] << " not found "  << endl;
    
    cout <<"Min is  " << Retrieve( FindMin( T ) ) << "    Max is  " << Retrieve( FindMax( T ) ) << endl;
+   cout << " Height is:" <<maxDepth(T)<<endl;
 				  
     
 

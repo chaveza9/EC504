@@ -119,3 +119,19 @@ ElementType Retrieve( Position P )
 {
   return P->Element;
 }
+int maxDepth( SearchTree T )
+{
+  if (T==NULL)
+    return -1;
+
+  // Compute height of each subtree
+  int left_height = maxDepth(T->Left);
+  int right_height = maxDepth(T->Right);
+
+  // Compute Maximum value between heights
+  int height = ((left_height>right_height)? 
+    left_height:right_height);
+
+  // Add 1 to height to include root
+  return 1+height;
+}
