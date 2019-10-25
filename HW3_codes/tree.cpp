@@ -70,7 +70,7 @@ SearchTree Insert( ElementType X, SearchTree T )
 	}
     }
   else
-    (* Change to < than or = rule *)
+    //(* Change to < than or = rule *)
     //  if( X < T->Element )   //
      if( X <= T->Element )
       T->Left = Insert( X, T->Left );
