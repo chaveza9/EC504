@@ -16,7 +16,7 @@ static int OpCount = 0;
 
 int localSize = 10;
 int numPermutations = 10;
-int deletionNum = 100;
+int deletionNum = 500;
 
 int  uniform(int  m);
 void initialize_and_permute(int permutation[], int n);
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
         for( i = 1; i < N[j]; i++ )
             NodeArray[i] = InputList[i];
         
-        if(j<4){
+        
         for (k = 0; k < numPermutations; k++)
         {
             // Empty Previous Tree
@@ -117,21 +117,17 @@ int main(int argc, char *argv[])
         // Compute Average and print
         
         myfile << sizeArray<< "\t" << average(treeHeight,numPermutations) <<endl;
-        }
-        else{
+        
+        if(sizeArray==1024)
+        {
             cout << "Analysis Part 2"<<endl;
-            // Empty Previous Tree
-            T = MakeEmpty( NULL );
-            cout << "empty"<<endl;
-            for( i = 0; i < sizeArray ; i++ )
-                T = Insert( NodeArray[i], T );
             cout << "created"<<endl;
             cout<<" Height Before Deletion:"<< getHeight(T)<<endl;
             // Delete Elements from Array
             for (i = 0; i < deletionNum; i++)
             {
                 delIndx[i] = NodeArray[rand()%1024]; 
-                cout<<"val to be deleted: "<<delIndx[i]<<endl;
+                //cout<<"val to be deleted: "<<delIndx[i]<<endl;
                 T = Delete(delIndx[i], T );    
             }
 
