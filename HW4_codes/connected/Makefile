@@ -3,9 +3,9 @@
 #============================================================
 TARGET	=  connected
 
-C_SOURCES =  connect.cpp
-C_OBJS     = connect.o
-MY_INCLUDES =
+C_SOURCES =  dfs.cpp bfs.cpp connect.cpp
+C_OBJS     = dfs.o bfs.o connect.o
+MY_INCLUDES = dfs.h bfs.h
 # merg.h
 
 
