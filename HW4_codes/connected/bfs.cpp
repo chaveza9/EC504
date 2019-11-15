@@ -80,3 +80,43 @@ int find_connected_components_BFS(int *FirstVertex, int V, int *EdgeList,int E)
     
     return NumberCC_BFS;
 }
+
+void BFS(Queue * Q, int *found, int *FirstVertex, int V, int *EdgeList,int E, int s)
+{
+    // Definition of artificial variables
+    int e;      //edge
+    int v;      //vertex
+    int count = 0;
+    //Populate visited verted array with falses to initiate
+    bool *visited = new bool[V];
+    std::fill_n(visited,V,false);
+    // Starting vertex marked as visited and added to queue
+    visited[s] = true;
+    //Enqueue first vertex
+    Enqueue(Q,s);
+    // Continue until queue is empty
+    while (Q->size > 0)
+    {
+        // dequeue front
+        s = Dequeue(Q);
+        // Get all adjacent vertices from vertex
+        for(e = FirstVertex[s];e<FirstVertex[s+1];e++)
+        {
+            // extract vertex from edge list
+            v = EdgeList[e];
+            // check if node has been visited
+            if(!visited[v])
+            {
+                // Mark as visited
+                visited[v] = true;
+                // Enqueue vertex
+                Enqueue(Q,v);
+            }
+        }
+        // store found vertex
+        found[count]=s;
+        // increase found counter
+        count++;
+        std::cout<<"OUT:"<< s <<std::endl;
+    }
+}

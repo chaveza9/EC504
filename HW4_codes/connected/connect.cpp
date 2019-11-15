@@ -43,13 +43,13 @@ int main(int argc, char *argv[]){
     cout << "Error opening file " <<endl;
     return -1;
   } 
-  
-     infile1 >> V;
-     infile1 >> E;
+	// Extract number of Vertex and number of Edges list ffrom file
+    infile1 >> V; // Verted size
+    infile1 >> E; // Edges size
     
     int *FirstVertex = new int[V+1];
     for(int i=0; i< V +1 ; i++) 
-      infile1 >> FirstVertex[i];  //  Note: FirstVertex[V] = E  fake extra link
+    	infile1 >> FirstVertex[i];  //  Note: FirstVertex[V] = E  fake extra link
     
     int *EdgeList = new int[E+1];
     for(int i=0; i< E +1 ; i++)
@@ -58,8 +58,16 @@ int main(int argc, char *argv[]){
     infile1.close();
 
  #if 1 // set to 1 to debug 
-     cout << endl << "A print in Adjacency  List form to help with Debugging! " << endl;
-     PrintAdjacencyListFormat(FirstVertex, V, EdgeList, E);
+    cout << endl << "A print in Adjacency  List form to help with Debugging! " << endl;
+    PrintAdjacencyListFormat(FirstVertex, V, EdgeList, E);
+    cout << endl << "-----BFS------"<<endl;
+    // Create output list
+    int *Found=new int[V];
+    fill_n(Found, V, -1);
+    // Create Queue
+    Queue *Q = createQueue(V);
+    int s = 0;  //starting BFS vertex
+    BFS(Q, Found, FirstVertex, V, EdgeList, E, s);
 #endif
     
     /* Find NumberCC_BFS   */
@@ -70,9 +78,11 @@ int main(int argc, char *argv[]){
     difference_in_seconds_BFS = double(difference_in_time.count());
 
     //Begin output file : DO NOT CHANGE
-    ofstream outfile(strcat(argv[1],"_out"));
+    /*
+	ofstream outfile(strcat(argv[1],"_out"));
     outfile << difference_in_seconds_BFS << endl;
     outfile << NumberCC_BFS << endl;
+	*/
     //     outfile << difference_in_seconds_DFS << endl;  
     //   outfile << NumberCC_DFS << endl;
     //End output file
