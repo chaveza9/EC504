@@ -60,6 +60,8 @@ int main(int argc, char *argv[]){
  #if 1 // set to 1 to debug 
     cout << endl << "A print in Adjacency  List form to help with Debugging! " << endl;
     PrintAdjacencyListFormat(FirstVertex, V, EdgeList, E);
+    
+    /*--------------- BFS Debugging ---------*/
     cout << endl << "-----BFS------"<<endl;
     // Create output list
     int *Found=new int[V];
@@ -68,6 +70,14 @@ int main(int argc, char *argv[]){
     Queue *Q = createQueue(V);
     int s = 0;  //starting BFS vertex
     BFS(Q, Found, FirstVertex, V, EdgeList, E, s);
+    /*--------------- DFS Debugging ---------*/
+    cout << endl << "-----DFS------"<<endl;
+    // Create output list
+    fill_n(Found, V, -1);
+    // Create Queue
+    Stack *S = createStack(V);
+    s = 0;  //starting DFS vertex
+    DFS(S, Found, FirstVertex, V, EdgeList, E, s);
 #endif
     
     /* Find NumberCC_BFS   */

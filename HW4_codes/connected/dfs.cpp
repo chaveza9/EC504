@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
 
 //Stack Functions Defitinition
 
@@ -59,5 +60,42 @@ int  Pop(Stack *S)
 }
 
 /* DFS FUNCTIONS */
-
+void DFS(Stack * S, int *found, int *FirstVertex, int V, int *EdgeList,int E, int i)
+{
+    // Definition of artificial variables
+    int e;      //edge
+    int w;      //vertex
+    int count = 0;
+    //Populate visited vertex array with falses to initiate
+    bool *visited = new bool[V];
+    std::fill_n(visited,V,false);
+    //Push first vertex
+    Push(S,i);
+    // Continue until queue is empty
+    while (S->size > 0)
+    {
+        // Pop vertex from stack and print 
+        i = Pop(S);
+        // Mark vertex as visited only if it has not been visited
+        if (!visited[i])
+        {
+            std::cout<<"OUT:"<<i<<std::endl;
+            found[count] = i; // dumm
+            visited[i] = true;
+            // Get all adjacent vertices from vertex
+            for(e = FirstVertex[i];e<FirstVertex[i+1];e++)
+            {   
+                // extract vertex from edge list
+                w = EdgeList[e];
+                //if a adjacent has not been visited, push to stack
+                if (!visited[w])
+                {
+                    Push(S,w);
+                }
+            }
+        }
+        // increase found counter
+        count++;
+    }
+}
 
