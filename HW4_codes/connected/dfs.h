@@ -14,5 +14,5 @@ Stack * createStack(int maxElements);
 void Push(Stack *S,int element);
 int Pop(Stack *S);
 void DFS(Stack * S, int *found, int *FirstVertex, int V, int *EdgeList,int E, int i);
-
+int find_connected_components_DFS(int *FirstVertex, int V, int *EdgeList,int E);
 #endif /*_DFS_H*/

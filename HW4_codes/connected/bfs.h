@@ -15,7 +15,6 @@ Queue * createQueue(int maxElements);
 void Enqueue(Queue *Q,int element);
 int Dequeue(Queue *Q);
 int find_connected_components_BFS(int *FirstVertex, int V, int *EdgeList,int E);
-// void BFS(Queue * Q,, int *Found, int *FirstVertex, int V, int *EdgeList,int E);
 void BFS(Queue * Q, int *found, int *FirstVertex, int V, int *EdgeList,int E, int s);
 
 #endif /*_BFS_H*/

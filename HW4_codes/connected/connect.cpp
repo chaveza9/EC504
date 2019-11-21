@@ -32,11 +32,13 @@ int main(int argc, char *argv[]){
   chrono::time_point<chrono::steady_clock> start, stop; 
   chrono::duration<double> difference_in_time;
   double difference_in_seconds_BFS; // Holds the final run time for BFS
+  double difference_in_seconds_DFS; // Holds the final run time for DFS
   
   ifstream infile1;
   int V;
   int E;
   int NumberCC_BFS;
+  int NumberCC_DFS;
   
   infile1.open(argv[1]);
   if(!infile1){
@@ -57,7 +59,7 @@ int main(int argc, char *argv[]){
     
     infile1.close();
 
- #if 1 // set to 1 to debug 
+ #if 0 // set to 1 to debug 
     cout << endl << "A print in Adjacency  List form to help with Debugging! " << endl;
     PrintAdjacencyListFormat(FirstVertex, V, EdgeList, E);
     
@@ -80,24 +82,33 @@ int main(int argc, char *argv[]){
     DFS(S, Found, FirstVertex, V, EdgeList, E, s);
 #endif
     
-    /* Find NumberCC_BFS   */
-    start = chrono::steady_clock::now();
-    NumberCC_BFS=find_connected_components_BFS(FirstVertex, V, EdgeList,E);
-    stop = chrono::steady_clock::now();
-    difference_in_time = stop - start;
-    difference_in_seconds_BFS = double(difference_in_time.count());
+  /* Find NumberCC_BFS   */
+  start = chrono::steady_clock::now();
+  NumberCC_BFS=find_connected_components_BFS(FirstVertex, V, EdgeList,E);
+  cout<<"Connected components BFS "<<NumberCC_BFS<<endl;
+  stop = chrono::steady_clock::now();
+  difference_in_time = stop - start;
+  difference_in_seconds_BFS = double(difference_in_time.count());
 
-    //Begin output file : DO NOT CHANGE
-    /*
-	ofstream outfile(strcat(argv[1],"_out"));
-    outfile << difference_in_seconds_BFS << endl;
-    outfile << NumberCC_BFS << endl;
-	*/
-    //     outfile << difference_in_seconds_DFS << endl;  
-    //   outfile << NumberCC_DFS << endl;
-    //End output file
-     
-    return 0;
+
+  /* Find NumberCC_DFS   */
+  start = chrono::steady_clock::now();
+  NumberCC_DFS=find_connected_components_BFS(FirstVertex, V, EdgeList,E);
+  cout<<"Connected components DFS "<<NumberCC_DFS<<endl;
+  stop = chrono::steady_clock::now();
+  difference_in_time = stop - start;
+  difference_in_seconds_DFS = double(difference_in_time.count());
+
+  //Begin output file : DO NOT CHANGE
+
+  ofstream outfile(strcat(argv[1],"_out"));
+  outfile << difference_in_seconds_BFS << endl;
+  outfile << NumberCC_BFS << endl;
+  outfile << difference_in_seconds_DFS << endl;  
+  outfile << NumberCC_DFS << endl;
+  //End output file
+    
+  return 0;
 }
 
 void PrintAdjacencyListFormat(int *FirstVertex, int V, int *EdgeList,int E)
