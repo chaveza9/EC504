@@ -1,4 +1,3 @@
-// Copyright 2018 Richard Brower brower@bu.edu
 /***************************************************
 Shortest path algorithms on G(N,A) with the node
 labled 1, 2, ..., |N| = Nm and Arcs 1,..., |A| = Na
