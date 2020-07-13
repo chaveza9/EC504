@@ -1,0 +1,40 @@
+CALLING DIJKSTRA/HEAP TO SOLVE THE PROBLEM
+FINISHED --- TOTAL CPU TIME 0.000007 SECS 
+Shortest distance to 1 is 99999999 
+1 
+ 
+Shortest distance to 2 is 99999999 
+2 
+ 
+Shortest distance to 3 is 99999999 
+3 
+ 
+Shortest distance to 4 is 99999999 
+4 
+ 
+Shortest distance to 5 is 0 
+5 --> 5 
+ 
+Shortest distance to 6 is 1 
+5 --> 6 
+ 
+CALLING Bellman-Ford TO SOLVE THE PROBLEM
+FINISHED --- TOTAL CPU TIME 0.000005 SECS 
+Shortest distance to 1 is 99999999 
+1 
+ 
+Shortest distance to 2 is 99999999 
+2 
+ 
+Shortest distance to 3 is 99999999 
+3 
+ 
+Shortest distance to 4 is 99999999 
+4 
+ 
+Shortest distance to 5 is 0 
+5 --> 5 
+ 
+Shortest distance to 6 is 1 
+5 --> 6 
+ 

@@ -1,0 +1,184 @@
+CALLING DIJKSTRA/HEAP TO SOLVE THE PROBLEM
+FINISHED --- TOTAL CPU TIME 0.000041 SECS 
+Shortest distance to 1 is 4 
+5 --> 1 
+ 
+Shortest distance to 2 is 6 
+5 --> 18 --> 2 
+ 
+Shortest distance to 3 is 15 
+5 --> 25 --> 10 --> 3 
+ 
+Shortest distance to 4 is 4 
+5 --> 18 --> 4 
+ 
+Shortest distance to 5 is 0 
+5 --> 5 
+ 
+Shortest distance to 6 is 6 
+5 --> 28 --> 6 
+ 
+Shortest distance to 7 is 9 
+5 --> 18 --> 7 
+ 
+Shortest distance to 8 is 4 
+5 --> 21 --> 12 --> 8 
+ 
+Shortest distance to 9 is 20 
+5 --> 28 --> 6 --> 15 --> 9 
+ 
+Shortest distance to 10 is 2 
+5 --> 25 --> 10 
+ 
+Shortest distance to 11 is 8 
+5 --> 28 --> 11 
+ 
+Shortest distance to 12 is 3 
+5 --> 21 --> 12 
+ 
+Shortest distance to 13 is 9 
+5 --> 25 --> 10 --> 13 
+ 
+Shortest distance to 14 is 18 
+5 --> 29 --> 14 
+ 
+Shortest distance to 15 is 7 
+5 --> 28 --> 6 --> 15 
+ 
+Shortest distance to 16 is 15 
+5 --> 18 --> 4 --> 16 
+ 
+Shortest distance to 17 is 16 
+5 --> 18 --> 17 
+ 
+Shortest distance to 18 is 2 
+5 --> 18 
+ 
+Shortest distance to 19 is 10 
+5 --> 19 
+ 
+Shortest distance to 20 is 10 
+5 --> 18 --> 7 --> 20 
+ 
+Shortest distance to 21 is 1 
+5 --> 21 
+ 
+Shortest distance to 22 is 11 
+5 --> 18 --> 4 --> 22 
+ 
+Shortest distance to 23 is 17 
+5 --> 19 --> 23 
+ 
+Shortest distance to 24 is 13 
+5 --> 24 
+ 
+Shortest distance to 25 is 1 
+5 --> 25 
+ 
+Shortest distance to 26 is 11 
+5 --> 18 --> 7 --> 26 
+ 
+Shortest distance to 27 is 7 
+5 --> 25 --> 10 --> 27 
+ 
+Shortest distance to 28 is 1 
+5 --> 28 
+ 
+Shortest distance to 29 is 5 
+5 --> 29 
+ 
+Shortest distance to 30 is 9 
+5 --> 21 --> 12 --> 30 
+ 
+CALLING Bellman-Ford TO SOLVE THE PROBLEM
+FINISHED --- TOTAL CPU TIME 0.000149 SECS 
+Shortest distance to 1 is 4 
+5 --> 1 
+ 
+Shortest distance to 2 is 6 
+5 --> 18 --> 2 
+ 
+Shortest distance to 3 is 15 
+5 --> 25 --> 10 --> 3 
+ 
+Shortest distance to 4 is 4 
+5 --> 18 --> 4 
+ 
+Shortest distance to 5 is 0 
+5 --> 5 
+ 
+Shortest distance to 6 is 6 
+5 --> 28 --> 6 
+ 
+Shortest distance to 7 is 9 
+5 --> 18 --> 7 
+ 
+Shortest distance to 8 is 4 
+5 --> 21 --> 12 --> 8 
+ 
+Shortest distance to 9 is 20 
+5 --> 28 --> 6 --> 15 --> 9 
+ 
+Shortest distance to 10 is 2 
+5 --> 25 --> 10 
+ 
+Shortest distance to 11 is 8 
+5 --> 28 --> 11 
+ 
+Shortest distance to 12 is 3 
+5 --> 21 --> 12 
+ 
+Shortest distance to 13 is 9 
+5 --> 25 --> 10 --> 13 
+ 
+Shortest distance to 14 is 18 
+5 --> 29 --> 14 
+ 
+Shortest distance to 15 is 7 
+5 --> 28 --> 6 --> 15 
+ 
+Shortest distance to 16 is 15 
+5 --> 18 --> 4 --> 16 
+ 
+Shortest distance to 17 is 16 
+5 --> 18 --> 17 
+ 
+Shortest distance to 18 is 2 
+5 --> 18 
+ 
+Shortest distance to 19 is 10 
+5 --> 19 
+ 
+Shortest distance to 20 is 10 
+5 --> 18 --> 7 --> 20 
+ 
+Shortest distance to 21 is 1 
+5 --> 21 
+ 
+Shortest distance to 22 is 11 
+5 --> 18 --> 4 --> 22 
+ 
+Shortest distance to 23 is 17 
+5 --> 19 --> 23 
+ 
+Shortest distance to 24 is 13 
+5 --> 24 
+ 
+Shortest distance to 25 is 1 
+5 --> 25 
+ 
+Shortest distance to 26 is 11 
+5 --> 18 --> 7 --> 26 
+ 
+Shortest distance to 27 is 7 
+5 --> 25 --> 10 --> 27 
+ 
+Shortest distance to 28 is 1 
+5 --> 28 
+ 
+Shortest distance to 29 is 5 
+5 --> 29 
+ 
+Shortest distance to 30 is 9 
+5 --> 21 --> 12 --> 30 
+ 
